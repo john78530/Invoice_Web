@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>$Title</title>
+</head>
+
+
+<body>
+
+<script>
+     #include( "util.js")
+</script>
+
+<h1>三聯式發票</h1>
+<form action="/invoice" method="post">
+    <table>
+    <tr>
+    <td>含稅金額</td>
+    <td>稅率</td>
+    <td>稅額</td>
+    <td>未稅金額</td>
+    </tr>
+    <tr>
+    <td><input id="taxIncludedPrice" name="taxIncludedPrice" type="text" onkeypress="clearTaxExclude()"></td>
+    <td><input name="vatRate" type="text" value="0.05"></td>
+    <td><input name="vat" type="text" readonly></td>
+    <td><input id="taxExcludedPrice" name="taxExcludedPrice" type="text" onkeypress="clearTaxInclude()"></td>
+    </tr>
+</table>
+
+  <input name="issue" type="submit" value="開發票">
+</form>
+
+<p>
+
+<form action="/invoice/company" method="post">
+    <table>
+    <tr>
+    <td>公司名稱</td>
+    <td>統一編號</td>
+    </tr>
+    <tr>
+    <td><input id="companyName" name="companyName" type="text" onkeypress="clearVatID()"></td>
+    <td><input id="vatID" name="vatID" type="text" onkeypress="clearCompanyName()"></td>
+    </tr>
+    <table>
+     <input name="search" type="submit" value="查詢">
+</form>
+
+
+</body>
+</html>

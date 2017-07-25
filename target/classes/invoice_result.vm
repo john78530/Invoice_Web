@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<h1>三聯式發票</h1>
+
+<form action="/invoice" method="get">
+
+<table>
+    <tr>
+    <td>含稅金額</td>
+    <td>稅率</td>
+    <td>稅額</td>
+    <td>未稅金額</td>
+    </tr>
+    <tr>
+    <td><input name="taxIncludedPrice" type="text" value="$invoice.getTaxIncludedPrice()" readonly></td>
+    <td><input name="vatRate" type="text" value="$invoice.getVatRate()" readonly></td>
+    <td><input name="vat" type="text" value="$invoice.getVat()" readonly></td>
+    <td><input name="taxExcludedPrice" type="text" value="$invoice.getTaxExcludedPrice()" readonly></td>
+    </tr>
+    </table>
+      <input name="reissue" type="submit" value="重開發票">
+</form>
+
+<p>
+
+<form action="/invoice" method="get">
+    <table>
+    <tr>
+    <td>公司名稱</td>
+    <td>統一編號</td>
+    </tr>
+    <tr>
+    <td><input name="companyName" type="text" value = $companyName ></td>
+    <td><input name="vatID" type="text" value = $vatID ></td>
+    </tr>
+    <table>
+    <input name="reissue" type="submit" value="重新查詢">
+</form>
+
+</body>
+</html>
